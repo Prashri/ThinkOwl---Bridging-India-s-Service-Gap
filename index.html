@@ -7,47 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- 
-        Infographic Narrative & Structure Plan:
-        1. Hero Section: The Customer Service Gap in India - A Quantifiable Problem.
-        2. The Problem Landscape (Pains): Common Challenges Across Indian Service Industries.
-            - High Volume Inquiries (Icon + Stat)
-            - Administrative Burden (Donut Chart)
-            - Legacy Systems (Icon + Text)
-            - Complex Manual Processes (Icon + Text)
-            - Security & Compliance Burden (Icon + Text)
-        3. Introducing ThinkOwl: Your AI-Powered Transformation Partner.
-            - OwlDesk & OwlForce Core Capabilities (Feature Grid with Icons).
-        4. Industry-Specific Pain-to-Gain Mapping with ThinkOwl:
-            - Banking & Financial Services: Challenge (KYC, Legacy) -> ThinkOwl Solution (Automated KYC, Integration).
-            - Insurance Sector: Challenge (Claims, Paperwork) -> ThinkOwl Solution (Automated Claims, Personalization).
-            - Telecommunications: Challenge (High Complaints, Manual CAF) -> ThinkOwl Solution (Chatbots, RPA Order Fulfillment).
-            - Healthcare: Challenge (Patient Onboarding, Data Silos) -> ThinkOwl Solution (Digital Intake, Unified View).
-            - Government Services (E-Governance): Challenge (Admin Burden, Coordination) -> ThinkOwl Solution (Automated Citizen Services, Unified Platforms).
-        5. The ThinkOwl Advantage: Overarching Benefits.
-            - Key Benefits (Efficiency, CX, Compliance, Agility) with icons.
-            - Strategic Insights for Indian Market.
-        6. Interactive AI Insight: How ThinkOwl Can Help Your Business (NEW SECTION with LLM integration).
-        7. Call to Action/Future Outlook.
-
-        Selected Color Palette: "Brilliant Blues and Vibrant Oranges"
-        - Primary Blue: #0052CC
-        - Secondary Blue: #007BFF
-        - Accent Orange: #FFA500
-        - Accent Yellow: #FFC107
-        - Neutral Light: #F8F9FA (Page Background)
-        - Neutral Medium: #E9ECEF (Card Background)
-        - Neutral Dark: #343A40 (Body Text)
-        - White: #FFFFFF
-
-        Visualization Choices & Justifications (Confirming NO SVG, NO MERMAID JS):
-        - Economic Loss & Hours Lost: Goal: Inform. Viz: Single Big Numbers with relevant emojis. Justification: Immediate impact, easy recall. Method: HTML/Tailwind. (NO SVG)
-        - Agent Time Allocation: Goal: Compare. Viz: Donut Chart. Justification: Clearly shows proportion of time wasted. Library: Chart.js (Canvas). (NO SVG)
-        - ThinkOwl Feature Grid: Goal: Inform/Organize. Viz: Grid of cards with icons. Justification: Quick overview of capabilities. Method: HTML/Tailwind. (NO SVG)
-        - Industry Pain/Gain Cards: Goal: Inform/Compare. Viz: Structured cards with bullet points, specific metrics, and icons. Justification: Direct mapping of problem to solution, detailed yet digestible. Method: HTML/Tailwind. (NO SVG)
-        - ThinkOwl Advantage: Goal: Inform. Viz: Icons with concise benefit statements. Justification: Summarizes value proposition. Method: HTML/Tailwind. (NO SVG)
-        - Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output. All diagrams/visuals are HTML/CSS/Tailwind or Chart.js (Canvas).
-    -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -60,7 +19,7 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            height: 300px; 
+            height: 300px;
             max-height: 400px;
         }
         @media (min-width: 768px) {
@@ -384,7 +343,7 @@
                 <h3 class="card-title text-center text-white">Strategic Insights for ThinkOwl in the Indian Market</h3>
                 <ul class="list-disc list-inside text-sm space-y-2">
                     <li><span class="font-semibold">Enhance India-Specific Social Media Engagement:</span> Actively showcase India-specific use cases, partnerships, and trends on local platforms.</li>
-                    <li><span class="font-semibold">Highlight India-Specific User Success Stories:</span> Feature testimonials and case studies from Indian businesses to build local trust and relevance.</li>
+                    <li><span class="font-semibold">Highlight India-Specific User Success Stories:</span> Feature testimonials and case cases from Indian businesses to build local trust and relevance.</li>
                     <li><span class="font-semibold">Consider Localized Support & Training:</span> Provide resources in local Indian languages to cater to diverse linguistic requirements.</li>
                     <li><span class="font-semibold">Offer Competitive Pricing:</span> Evaluate pricing against local competitors, with attractive plans for Indian SMBs and enterprises.</li>
                 </ul>
@@ -415,7 +374,7 @@
             <p class="text-lg max-w-3xl mx-auto mb-6">
                 ThinkOwl's AI-powered OwlDesk and OwlForce platforms are engineered to help your organization overcome complex challenges, enhance customer satisfaction, and drive unparalleled efficiency in India's dynamic service landscape.
             </p>
-            <a href="#" class="inline-block bg-[#FFA500] hover:bg-[#FFC107] text-[#0052CC] font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+            <a href="https://www.thinkowl.com/schedule-a-demo" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#FFA500] hover:bg-[#FFC107] text-[#0052CC] font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
                 Discover ThinkOwl Solutions
             </a>
         </section>
@@ -449,7 +408,7 @@
             if (currentLine.trim().length > 0) {
                 lines.push(currentLine.trim());
             }
-            return lines.length > 0 ? lines : [label]; 
+            return lines.length > 0 ? lines : [label];
         }
 
         const commonChartOptions = {
@@ -523,11 +482,12 @@
 
             try {
                 const prompt = `You are an expert AI automation consultant specializing in customer service platforms, with deep knowledge of ThinkOwl's OwlDesk and OwlForce products. A potential client has described the following business pain point: '${painPointInput}'. Based on this, explain in a concise, actionable paragraph how ThinkOwl's features (such as Omnichannel Inbox, AI Categorization, Workflow Automation, RPA, Universal Integration, Conversational AI, Data Extraction, Low-Code/No-Code, or Security & Compliance) would specifically address this pain point and transform their operations. Focus on the 'gain' or solution ThinkOwl provides, using clear, persuasive language.`;
-                
+
                 let chatHistory = [];
                 chatHistory.push({ role: "user", parts: [{ text: prompt }] });
                 const payload = { contents: chatHistory };
-                const apiKey = "AIzaSyA3CGvAcBWdgHeUaRH-Rx2O2Q-4e_XxFgY"; 
+                // IMPORTANT: Replace "" with your actual Gemini API key when deploying to Netlify
+                const apiKey = "AIzaSyA3CGvAcBWdgHeUaRH-Rx2O2Q-4e_XxFgY";
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                 const response = await fetch(apiUrl, {
