@@ -6,12 +6,58 @@
     <title>ThinkOwl: Bridging India's Service Gap with AI Automation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- 
+        Infographic Narrative & Structure Plan:
+        1. Hero Section: The Customer Service Gap in India - A Quantifiable Problem.
+        2. The Problem Landscape (Pains): Common Challenges Across Indian Service Industries.
+            - High Volume Inquiries (Icon + Stat)
+            - Administrative Burden (Donut Chart)
+            - Legacy Systems (Icon + Text)
+            - Complex Manual Processes (Icon + Text)
+            - Security & Compliance Burden (Icon + Text)
+        3. Introducing ThinkOwl: Your AI-Powered Transformation Partner.
+            - OwlDesk & OwlForce Core Capabilities (Feature Grid with Icons).
+        4. Industry-Specific Pain-to-Gain Mapping with ThinkOwl:
+            - Banking & Financial Services: Challenge (KYC, Legacy) -> ThinkOwl Solution (Automated KYC, Integration).
+            - Insurance Sector: Challenge (Claims, Paperwork) -> ThinkOwl Solution (Automated Claims, Personalization).
+            - Telecommunications: Challenge (High Complaints, Manual CAF) -> ThinkOwl Solution (Chatbots, RPA Order Fulfillment).
+            - Healthcare: Challenge (Patient Onboarding, Data Silos) -> ThinkOwl Solution (Digital Intake, Unified View).
+            - Government Services (E-Governance): Challenge (Admin Burden, Coordination) -> ThinkOwl Solution (Automated Citizen Services, Unified Platforms).
+        5. The ThinkOwl Advantage: Overarching Benefits.
+            - Key Benefits (Efficiency, CX, Compliance, Agility) with icons.
+            - Strategic Insights for Indian Market.
+        6. Interactive AI Insight: How ThinkOwl Can Help Your Business (NEW SECTION with LLM integration).
+        7. Call to Action/Future Outlook.
+
+        Selected Color Palette: Custom Brand Scheme
+        - Primary Color: #0078D4
+        - Secondary Color: #005A9E
+        - Accent Color: #E5F3FF
+        - Background Color: #F5F5F5
+        - Text Color: #333333
+
+        Visualization Choices & Justifications (Confirming NO SVG, NO MERMAID JS):
+        - Economic Loss & Hours Lost: Goal: Inform. Viz: Single Big Numbers with relevant emojis. Justification: Immediate impact, easy recall. Method: HTML/Tailwind. (NO SVG)
+        - Agent Time Allocation: Goal: Compare. Viz: Donut Chart. Justification: Clearly shows proportion of time wasted. Library: Chart.js (Canvas). (NO SVG)
+        - ThinkOwl Feature Grid: Goal: Inform/Organize. Viz: Grid of cards with icons. Justification: Quick overview of capabilities. Method: HTML/Tailwind. (NO SVG)
+        - Industry Pain/Gain Cards: Goal: Inform/Compare. Viz: Structured cards with bullet points, specific metrics, and icons. Justification: Direct mapping of problem to solution, detailed yet digestible. Method: HTML/Tailwind. (NO SVG)
+        - ThinkOwl Advantage: Goal: Inform. Viz: Icons with concise benefit statements. Justification: Summarizes value proposition. Method: HTML/Tailwind. (NO SVG)
+        - Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output. All diagrams/visuals are HTML/CSS/Tailwind or Chart.js (Canvas).
+    -->
     <style>
+        :root {
+            --primary-color: #0078D4;
+            --secondary-color: #005A9E;
+            --accent-color: #E5F3FF;
+            --background-color: #F5F5F5;
+            --text-color: #333333;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F9FA;
-            color: #343A40;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', sans-serif;
         }
         .chart-container {
             position: relative;
@@ -19,7 +65,7 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            height: 300px;
+            height: 300px; 
             max-height: 400px;
         }
         @media (min-width: 768px) {
@@ -28,7 +74,7 @@
             }
         }
         .stat-card {
-            background-color: #FFFFFF;
+            background-color: #FFFFFF; /* Kept white for contrast as per typical card design */
             border-radius: 0.5rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             padding: 1.5rem;
@@ -37,22 +83,22 @@
         .stat-value {
             font-size: 2.25rem;
             font-weight: 700;
-            color: #0052CC;
+            color: var(--primary-color);
         }
         .stat-label {
             font-size: 0.875rem;
-            color: #4A5568;
+            color: var(--text-color);
             margin-top: 0.5rem;
         }
         .section-title {
             font-size: 1.875rem;
             font-weight: 700;
-            color: #0052CC;
+            color: var(--primary-color);
             margin-bottom: 1.5rem;
             text-align: center;
         }
         .card {
-            background-color: #E9ECEF;
+            background-color: var(--accent-color); /* Updated to accent-color */
             border-radius: 0.5rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             padding: 1.5rem;
@@ -61,19 +107,19 @@
         .card-title {
             font-size: 1.25rem;
             font-weight: 600;
-            color: #0052CC;
+            color: var(--primary-color); /* Updated to primary-color */
             margin-bottom: 0.75rem;
         }
         .pain-point {
-            color: #DC2626; /* Red for pain */
+            color: #DC2626; /* Kept specific red for pain, as it's a standard visual cue */
             font-weight: 600;
         }
         .gain-point {
-            color: #16A34A; /* Green for gain */
+            color: #16A34A; /* Kept specific green for gain, as it's a standard visual cue */
             font-weight: 600;
         }
         .feature-card {
-            background-color: #FFFFFF;
+            background-color: #FFFFFF; /* Kept white for feature cards */
             border-radius: 0.5rem;
             box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.05);
             padding: 1rem;
@@ -84,11 +130,25 @@
             justify-content: center;
             min-height: 120px; /* Ensure consistent height */
         }
+        /* Custom button styling based on provided .button class, translated to Tailwind where possible */
+        .primary-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .primary-button:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="bg-gradient-to-r from-[#0052CC] to-[#007BFF] text-white py-8 shadow-lg">
+    <header class="bg-[var(--primary-color)] text-white py-8 shadow-lg">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl font-bold mb-2">ThinkOwl: Bridging India's Service Gap with AI Automation</h1>
             <p class="text-xl">Transforming Customer Service & Operations for Indian Industries</p>
@@ -138,10 +198,10 @@
                 <div class="card">
                     <h3 class="card-title text-center">Key Operational Pain Points</h3>
                     <ul class="list-disc list-inside text-sm text-gray-700 space-y-2 mt-4">
-                        <li><span class="font-semibold text-[#0052CC]">High Volume Inquiries:</span> Industries like telecom, retail, and financial services consistently register the highest volume of consumer complaints, straining resources.</li>
-                        <li><span class="font-semibold text-[#0052CC]">Legacy Systems:</span> Outdated, siloed systems (e.g., Fino Payments Bank) hinder real-time data access, integration, and scalability, causing frequent outages.</li>
-                        <li><span class="font-semibold text-[#0052CC]">Complex Manual Processes:</span> Intricate workflows with multiple approvals and manual steps (e.g., 5-day telecom order review) are prone to errors and delays.</li>
-                        <li><span class="font-semibold text-[#0052CC]">Security & Compliance Burden:</span> Stringent regulations (RBI, DPDPA, IRDAI) demand robust data protection, which legacy systems often fail to provide, leading to penalties.</li>
+                        <li><span class="font-semibold text-[var(--primary-color)]">High Volume Inquiries:</span> Industries like telecom, retail, and financial services consistently register the highest volume of consumer complaints, straining resources.</li>
+                        <li><span class="font-semibold text-[var(--primary-color)]">Legacy Systems:</span> Outdated, siloed systems (e.g., Fino Payments Bank) hinder real-time data access, integration, and scalability, causing frequent outages.</li>
+                        <li><span class="font-semibold text-[var(--primary-color)]">Complex Manual Processes:</span> Intricate workflows with multiple approvals and manual steps (e.g., 5-day telecom order review) are prone to errors and delays.</li>
+                        <li><span class="font-semibold text-[var(--primary-color)]">Security & Compliance Burden:</span> Stringent regulations (RBI, DPDPA, IRDAI) demand robust data protection, which legacy systems often fail to provide, leading to penalties.</li>
                     </ul>
                      <p class="text-xs text-gray-600 mt-4 text-center">Source: Report [3, 7, 12, 13, 14, 18, 19, 21, 23, 24, 32, 33, 36, 37, 38, 39, 40, 41, 42, 43, 44, 49]</p>
                 </div>
@@ -293,7 +353,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="card flex flex-col items-center justify-center bg-[#007BFF] text-white lg:col-span-1">
+                <div class="card flex flex-col items-center justify-center bg-[var(--primary-color)] text-white lg:col-span-1">
                     <div class="text-3xl mb-3">💡</div>
                     <h3 class="text-xl font-semibold mb-2 text-center">ThinkOwl: Your Path to Efficiency</h3>
                     <p class="text-sm text-center">By addressing core challenges with intelligent automation, ThinkOwl empowers organizations to deliver superior service.</p>
@@ -309,41 +369,41 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="stat-card">
                     <div class="text-4xl mb-2 text-green-600">🚀</div>
-                    <h3 class="font-semibold text-lg text-[#0052CC]">Enhanced Efficiency & Productivity</h3>
+                    <h3 class="font-semibold text-lg text-[var(--primary-color)]">Enhanced Efficiency & Productivity</h3>
                     <p class="text-sm text-gray-700">Automates up to 84% of agent's administrative work, freeing them for complex problem-solving and strategic tasks.</p>
                 </div>
                 <div class="stat-card">
                     <div class="text-4xl mb-2 text-green-600">💖</div>
-                    <h3 class="font-semibold text-lg text-[#0052CC]">Superior Customer Experience</h3>
+                    <h3 class="font-semibold text-lg text-[var(--primary-color)]">Superior Customer Experience</h3>
                     <p class="text-sm text-gray-700">Faster resolutions, personalized interactions, and seamless omnichannel support reduce frustration and build loyalty.</p>
                 </div>
                 <div class="stat-card">
                     <div class="text-4xl mb-2 text-green-600">✅</div>
-                    <h3 class="font-semibold text-lg text-[#0052CC]">Robust Security & Compliance</h3>
+                    <h3 class="font-semibold text-lg text-[var(--primary-color)]">Robust Security & Compliance</h3>
                     <p class="text-sm text-gray-700">Built-in features (ISO certified, GDPR/DPDPA assistance) ensure data protection and regulatory adherence, mitigating risks.</p>
                 </div>
                 <div class="stat-card">
                     <div class="text-4xl mb-2 text-green-600">⚡</div>
-                    <h3 class="font-semibold text-lg text-[#0052CC]">Agility & Rapid Innovation</h3>
+                    <h3 class="font-semibold text-lg text-[var(--primary-color)]">Agility & Rapid Innovation</h3>
                     <p class="text-sm text-gray-700">Low-Code/No-Code capabilities empower business users to adapt swiftly, accelerating time-to-market for new services.</p>
                 </div>
                 <div class="stat-card">
                     <div class="text-4xl mb-2 text-green-600">📈</div>
-                    <h3 class="font-semibold text-lg text-[#0052CC]">Cost Optimization</h3>
+                    <h3 class="font-semibold text-lg text-[var(--primary-color)]">Cost Optimization</h3>
                     <p class="text-sm text-gray-700">Reduces operational costs by minimizing manual effort, improving resource allocation, and preventing churn.</p>
                 </div>
                 <div class="stat-card">
                     <div class="text-4xl mb-2 text-green-600">🌐</div>
-                    <h3 class="font-semibold text-lg text-[#0052CC]">Seamless Integration</h3>
+                    <h3 class="font-semibold text-lg text-[var(--primary-color)]">Seamless Integration</h3>
                     <p class="text-sm text-gray-700">Connects disparate legacy and modern systems, creating a unified data ecosystem for intelligent operations.</p>
                 </div>
             </div>
 
-            <div class="card mt-12 bg-[#007BFF] text-white">
+            <div class="card mt-12 bg-[var(--primary-color)] text-white">
                 <h3 class="card-title text-center text-white">Strategic Insights for ThinkOwl in the Indian Market</h3>
                 <ul class="list-disc list-inside text-sm space-y-2">
                     <li><span class="font-semibold">Enhance India-Specific Social Media Engagement:</span> Actively showcase India-specific use cases, partnerships, and trends on local platforms.</li>
-                    <li><span class="font-semibold">Highlight India-Specific User Success Stories:</span> Feature testimonials and case cases from Indian businesses to build local trust and relevance.</li>
+                    <li><span class="font-semibold">Highlight India-Specific User Success Stories:</span> Feature testimonials and case studies from Indian businesses to build local trust and relevance.</li>
                     <li><span class="font-semibold">Consider Localized Support & Training:</span> Provide resources in local Indian languages to cater to diverse linguistic requirements.</li>
                     <li><span class="font-semibold">Offer Competitive Pricing:</span> Evaluate pricing against local competitors, with attractive plans for Indian SMBs and enterprises.</li>
                 </ul>
@@ -356,8 +416,8 @@
                 Describe a specific customer service pain point or operational challenge you face. Our AI will provide a tailored insight into how ThinkOwl's solutions can address it.
             </p>
             <div class="card max-w-2xl mx-auto">
-                <textarea id="painPointInput" class="w-full p-3 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-[#007BFF]" rows="5" placeholder="e.g., 'Our banking KYC process takes too long due to manual document verification and multiple system logins.' or 'Customers complain about long hold times and multiple transfers in our telecom support.'"></textarea>
-                <button id="analyzePainPointBtn" class="w-full bg-[#FFA500] hover:bg-[#FFC107] text-[#0052CC] font-bold py-3 px-6 rounded-md shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                <textarea id="painPointInput" class="w-full p-3 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]" rows="5" placeholder="e.g., 'Our banking KYC process takes too long due to manual document verification and multiple system logins.' or 'Customers complain about long hold times and multiple transfers in our telecom support.'"></textarea>
+                <button id="analyzePainPointBtn" class="primary-button w-full">
                     Analyze My Business Pain Point ✨
                 </button>
                 <div id="llmResponseArea" class="mt-6 p-4 bg-white border border-gray-200 rounded-md shadow-sm min-h-[100px] flex items-center justify-center text-gray-700">
@@ -369,27 +429,26 @@
             </div>
         </section>
 
-        <section id="call-to-action" class="text-center py-12 bg-gradient-to-r from-[#007BFF] to-[#0052CC] text-white rounded-lg shadow-xl">
+        <section id="call-to-action" class="text-center py-12 bg-[var(--primary-color)] text-white rounded-lg shadow-xl">
             <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Service Operations?</h2>
             <p class="text-lg max-w-3xl mx-auto mb-6">
                 ThinkOwl's AI-powered OwlDesk and OwlForce platforms are engineered to help your organization overcome complex challenges, enhance customer satisfaction, and drive unparalleled efficiency in India's dynamic service landscape.
             </p>
-            <a href="https://www.thinkowl.com/schedule-a-demo" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#FFA500] hover:bg-[#FFC107] text-[#0052CC] font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+            <a href="https://www.thinkowl.com/schedule-a-demo" target="_blank" rel="noopener noreferrer" class="primary-button inline-block text-white font-bold py-3 px-8 rounded-full shadow-lg">
                 Discover ThinkOwl Solutions
             </a>
         </section>
     </main>
 
-    <footer class="text-center py-6 text-sm text-gray-600 border-t border-gray-200">
+    <footer class="text-center py-6 text-sm text-gray-600 border-t border-gray-200 bg-[var(--primary-color)] text-white">
         <p>&copy; 2024 ThinkOwl. Data based on the report: "Unlocking Efficiency: Ideal Indian Service Industries for AI-Powered Customer Communication Platforms".</p>
     </footer>
 
     <script>
-        const primaryBlue = '#0052CC';
-        const secondaryBlue = '#007BFF';
-        const accentOrange = '#FFA500';
-        const accentYellow = '#FFC107';
-        const neutralDark = '#343A40';
+        // Dynamically fetch CSS variables for Chart.js
+        const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
+        const secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color').trim();
+        const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color').trim();
 
         function processLabel(label, maxLength = 16) {
             if (typeof label !== 'string' || label.length <= maxLength) {
@@ -408,7 +467,7 @@
             if (currentLine.trim().length > 0) {
                 lines.push(currentLine.trim());
             }
-            return lines.length > 0 ? lines : [label];
+            return lines.length > 0 ? lines : [label]; 
         }
 
         const commonChartOptions = {
@@ -417,7 +476,7 @@
             plugins: {
                 legend: {
                     labels: {
-                        color: neutralDark,
+                        color: textColor,
                         font: { size: 10 }
                     }
                 },
@@ -438,11 +497,11 @@
             scales: {
                 y: {
                     beginAtZero: true,
-                    ticks: { color: neutralDark, font: { size: 10 } },
+                    ticks: { color: textColor, font: { size: 10 } },
                     grid: { color: '#E0E0E0' }
                 },
                 x: {
-                    ticks: { color: neutralDark, font: { size: 10 } },
+                    ticks: { color: textColor, font: { size: 10 } },
                     grid: { display: false }
                 }
             }
@@ -457,7 +516,7 @@
                     datasets: [{
                         label: 'Agent Time Allocation',
                         data: [16, 84],
-                        backgroundColor: [accentOrange, secondaryBlue],
+                        backgroundColor: ['#16A34A', secondaryColor], /* Specific green for resolution, secondary for admin */
                         borderColor: ['#FFFFFF', '#FFFFFF'],
                         borderWidth: 2
                     }]
@@ -482,12 +541,11 @@
 
             try {
                 const prompt = `You are an expert AI automation consultant specializing in customer service platforms, with deep knowledge of ThinkOwl's OwlDesk and OwlForce products. A potential client has described the following business pain point: '${painPointInput}'. Based on this, explain in a concise, actionable paragraph how ThinkOwl's features (such as Omnichannel Inbox, AI Categorization, Workflow Automation, RPA, Universal Integration, Conversational AI, Data Extraction, Low-Code/No-Code, or Security & Compliance) would specifically address this pain point and transform their operations. Focus on the 'gain' or solution ThinkOwl provides, using clear, persuasive language.`;
-
+                
                 let chatHistory = [];
                 chatHistory.push({ role: "user", parts: [{ text: prompt }] });
                 const payload = { contents: chatHistory };
-                // IMPORTANT: Replace "" with your actual Gemini API key when deploying to Netlify
-                const apiKey = "AIzaSyA3CGvAcBWdgHeUaRH-Rx2O2Q-4e_XxFgY";
+                const apiKey = "AIzaSyA3CGvAcBWdgHeUaRH-Rx2O2Q-4e_XxFgY"; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                 const response = await fetch(apiUrl, {
